@@ -1,0 +1,19 @@
+media_queries = {
+    sm: 'only screen and (max-width: 760px)',
+    md: 'only screen and (min-width: 761px) and (max-width: 1200px)',
+    lg: 'only screen and (min-width: 1201px)'
+};
+
+for_breakpoint(breakpoints) {
+    conditions = ();
+
+    for breakpoint in breakpoints {
+        push(conditions, media_queries[breakpoint]);
+    }
+
+    conditions = join(', ', conditions);
+
+    @media conditions {
+        {block};
+    }
+}

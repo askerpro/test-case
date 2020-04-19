@@ -1,0 +1,36 @@
+@require '../../layout/mixins/breakpoints';
+
+.spacer {
+  margin-top: 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 24px;
+
+  +for_breakpoint(md) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 6px;
+  }
+
+  +for_breakpoint(sm) {
+    grid-template-columns: 50% 50%;
+    grid-gap: 6px;
+  }
+}
+
+.pagination {
+  margin: 40px auto;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+
+  a {
+    margin: 5px;
+
+    &.arrow {
+      font-size: 1.4rem;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@require '../../layout/mixins/variables';
+@require '../../layout/mixins/breakpoints';
+
+.wrapper {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+
+  .label {
+    font-size: 20px;
+  }
+
+  .value {
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  +for_breakpoint(sm) {
+    grid-template-columns: 1fr;
+  }
+
+  .items {
+  }
+
+  .input-fields {
+    background-color: #fff;
+    padding: 20px;
+    position: sticky;
+    top: $headerHeight + 30px;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  .successMessage{
+    font-size: 50px;
+  }
+}

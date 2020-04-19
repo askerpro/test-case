@@ -1,0 +1,65 @@
+@require '../../layout/mixins/variables';
+@require '../../layout/mixins/breakpoints';
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+
+  +for_breakpoint(sm) {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .items {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-section {
+    background-color: #fff;
+    padding: 20px;
+    position: sticky;
+    top: $headerHeight + 20px;
+    height: fit-content;
+
+    .label {
+      font-size: 20px;
+    }
+
+    .value {
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    .spacer {
+      margin-top: 20px;
+    }
+
+    +for_breakpoint(sm) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      top: unset;
+      padding: 6px;
+
+      h1 {
+        display: none;
+      }
+
+      .label {
+        font-size: 14px;
+      }
+
+      .value {
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+}

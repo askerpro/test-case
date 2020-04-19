@@ -1,25 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import Layout from "./layout";
+import ItemsPage from "./pages/items";
+import CheckoutPage from "./pages/checkout";
+import CartPage from "./pages/cart";
+import store from "./store";
+import { Provider } from "react-redux";
+import "./app.styl";
+
+function ScrollToTop() {
+  const location = useLocation();
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return null;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <ScrollToTop />
+        <Layout>
+          <Switch>
+            <Route path="/cart">
+              <CartPage />
+            </Route>
+            <Route path="/checkout">
+              <CheckoutPage />
+            </Route>
+            <Route path="/">
+              <ItemsPage />
+            </Route>
+          </Switch>
+        </Layout>
+      </Router>
+    </Provider>
   );
 }
 

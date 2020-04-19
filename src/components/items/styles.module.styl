@@ -1,0 +1,50 @@
+@require '../../layout/mixins/palette';
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  position: relative;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+
+.media {
+  padding-top: 62%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  position: absolute;
+  top: 10%;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  display: block;
+}
+
+.content {
+  padding: 16px;
+  overflow: hidden;
+
+  .spacer {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .price {
+    color: $secondary;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+}
+
+.actions {
+  padding: 16px;
+}

@@ -1,0 +1,63 @@
+@require '../../layout/mixins/palette';
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-bottom: 1px solid #d8d8d8;
+  display: flex;
+  background-color: #fff;
+  margin-bottom: 12px;
+  height: fit-content;
+}
+
+.media {
+  height: 120px;
+  width: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.img {
+  height: 80%;
+  width: auto;
+  object-fit: contain;
+}
+
+.content {
+  padding: 16px;
+
+  .spacer {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .price {
+    color: $secondary;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .countWrapper {
+    display: flex;
+    .count {
+      font-size: 24px;
+      font-weight: 500;
+      margin: 0 12px;
+    }
+    margin: 20px auto;
+  }
+}
+
+.actions {
+  padding: 16px;
+
+  
+}
